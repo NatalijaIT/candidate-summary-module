@@ -1,9 +1,9 @@
 import type { Skill, SkillWithProfile } from '../api/types';
 
-export function mergeSkillsWithProfile(
+export const mergeSkillsWithProfile = (
     summariesSkills: Skill[] | undefined,
     profileSkills: string[] | undefined
-): SkillWithProfile[] {
+): SkillWithProfile[] => {
     if (!summariesSkills || summariesSkills.length === 0) {
         return [];
     }
@@ -14,7 +14,7 @@ export function mergeSkillsWithProfile(
         ...skill,
         byProfile: profileSkillsSet.has(skill.title.toLocaleLowerCase())
     }));
-}
+};
 
 export const sortSkillsByRelevance = (skills: SkillWithProfile[]) =>
     skills?.sort((skillA, skillB) => {

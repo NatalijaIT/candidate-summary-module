@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { fetchCandidateProfile, fetchCandidateSummary } from './api/api.ts'
 import { theme } from './theme';
 
-import './index.css'
 import App from './App.tsx'
 
 const queryClient = new QueryClient({

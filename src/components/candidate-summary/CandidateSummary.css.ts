@@ -4,6 +4,18 @@ import {
     Typography,
     styled
 } from "@mui/material";
+import { theme } from '../../theme';
+
+export const ContentWrapper = styled(Box)`
+	max-width: 800px;
+	margin: 0 auto;
+	padding: ${theme.spacing(2)};
+    color: ${theme.palette.common.black}
+
+	${theme.breakpoints.up('sm')} {
+		padding: ${theme.spacing(8)};
+	}
+`;
 
 export const TitleText = styled(Typography)(({ theme }) => ({
     position: "relative",
@@ -59,7 +71,7 @@ export const HeaderRow = styled(Stack)(({ theme }) => ({
     justifyContent: "space-between",
     height: 40,
     marginBottom: theme.spacing(4),
-    '@media (max-width: 424px)': {
+    '@media (max-width: 440px)': {
         height: 'auto',
         flexDirection: 'column',
         alignItems: 'flex-start',
@@ -68,8 +80,8 @@ export const HeaderRow = styled(Stack)(({ theme }) => ({
     },
 }));
 
-export const SunnaryText = styled(Box)(({ theme }) => ({
-    weight: 400,
+export const SummaryText = styled(Typography)(({ theme }) => ({
+    weight: theme.typography.body1.fontWeight,
     lineHeight: theme.typography.body1.lineHeight,
     fontSize: theme.typography.body1.fontSize,
     marginBottom: theme.spacing(4)

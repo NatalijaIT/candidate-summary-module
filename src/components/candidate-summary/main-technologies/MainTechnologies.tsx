@@ -1,6 +1,6 @@
 import MainTechnologiesItem from './MainTechnologiesItem';
 import { Box } from '@mui/material';
-import type { SkillWithProfile } from '../api/types';
+import type { SkillWithProfile } from '../../../api/types';
 import { TechnologiesWrapper, MainTitle } from './MainTechnologies.css';
 
 type MainTechnologiesProps = {
@@ -10,7 +10,7 @@ type MainTechnologiesProps = {
 const MainTechnologies = ({ candidateSkills }: MainTechnologiesProps) => {
 	return (
 		<Box>
-			<MainTitle variant="h6" fontWeight={600} mb={2}>
+			<MainTitle variant="h6" mb={2}>
 				Main technologies
 			</MainTitle>
 			<TechnologiesWrapper>

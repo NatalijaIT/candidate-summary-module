@@ -1,13 +1,13 @@
 import { Stack } from '@mui/material';
-import { MainTitle } from './MainTechnologies.css';
-import { StackItem } from './shared';
+import { MainTitle } from '../main-technologies/MainTechnologies.css';
+import { StackItem } from '../../@shared';
 
-type StatusIndicatorItemProps = {
+type AvailabilityItemProps = {
     title?: string;
     value?: string;
 };
 
-const StatusIndicatorItem = ({ title, value }: StatusIndicatorItemProps) => {
+const AvailabilityItem = ({ title, value }: AvailabilityItemProps) => {
     return (
         <Stack spacing={2}>
             <MainTitle variant="h6" fontWeight={600}>
@@ -18,4 +18,4 @@ const StatusIndicatorItem = ({ title, value }: StatusIndicatorItemProps) => {
     );
 };
 
-export default StatusIndicatorItem;
+export default AvailabilityItem;

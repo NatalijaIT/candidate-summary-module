@@ -1,8 +1,8 @@
-import { useCandidateSummary, useCandidateProfile } from '../hooks/useCandidateData';
-import MainTechnologies from './MainTechnologies';
-import { Typography } from "@mui/material";
+import { useCandidateSummary, useCandidateProfile } from '../../hooks/useCandidateData';
+import MainTechnologies from './main-technologies/MainTechnologies';
 import {
-    SunnaryText,
+    ContentWrapper,
+    SummaryText,
     HeaderRow,
     InfoIcon,
     InfoText,
@@ -11,11 +11,11 @@ import {
     TitleText,
     TitleWrapper
 } from "./CandidateSummary.css";
-import AdditionalSkills from './AdditionalSkills';
-import RewardsAndAchievements from './Achievements';
-import StatusIndicator from './StatusIndicator';
-import Loader from './shared/Loader';
-import { mergeSkillsWithProfile, sortSkillsByRelevance } from '../utils/skillUtils';
+import AdditionalSkills from './additional-skills/AdditionalSkills';
+import Achievements from './achievements/Achievements';
+import Availability from './availability/Availability';
+import Loader from '../@shared/Loader';
+import { mergeSkillsWithProfile, sortSkillsByRelevance } from '../../utils/skillUtils';
 
 const CandidateSummaryModule = () => {
     const { data: summaryData, isLoading: isSummaryLoading } = useCandidateSummary();
@@ -38,7 +38,7 @@ const CandidateSummaryModule = () => {
     }
 
     return (
-        <>
+        <ContentWrapper>
             <HeaderRow direction="row" spacing={2}>
                 <TitleWrapper>
                     <TitleHighlight />
@@ -54,21 +54,19 @@ const CandidateSummaryModule = () => {
                     </InfoText>
                 </InfoWrapper>
             </HeaderRow>
-            <SunnaryText>
-                <Typography>
-                    {summary}
-                </Typography>
-            </SunnaryText>
+            <SummaryText>
+                {summary}
+            </SummaryText>
             <MainTechnologies candidateSkills={sortedSkills} />
             <AdditionalSkills candidateSkills={sortedSkills} />
-            <RewardsAndAchievements achievements={summaryAchievements} />
-            <StatusIndicator
+            <Achievements achievements={summaryAchievements} />
+            <Availability
                 availability={summaryAvailability}
                 availaibityHours={availaibityHours}
                 isDirectHirePossible={isDirectHirePossible}
                 readyToStart={readyToStart}
             />
-        </>
+        </ContentWrapper>
     );
 }
 

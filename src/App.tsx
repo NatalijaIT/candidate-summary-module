@@ -1,11 +1,8 @@
-import CandidateSummary from './components/CandidateSummary.tsx';
-import { AppWrapper } from './App.css.ts';
+import CandidateSummary from './components/candidate-summary/CandidateSummary.tsx';
 
 function App() {
   return (
-    <AppWrapper>
       <CandidateSummary />
-    </AppWrapper>
   )
 }
 

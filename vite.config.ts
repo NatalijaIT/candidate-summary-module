@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: '', // HEAR SHOLD BE BASE URL
+        target: '', // HERE SHOULD BE BASE URL
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path,

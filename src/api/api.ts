@@ -1,9 +1,11 @@
+const API_AUTH_KEY = import.meta.env.VITE_API_AUTH_KEY;
+
 async function fetchAPI(endpoint: string, errorMessage: string) {
     const response = await fetch(endpoint, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'auth-key': '', // HERE SHOULD BE MY KEY
+            'auth-key': API_AUTH_KEY,
         }
     });
 

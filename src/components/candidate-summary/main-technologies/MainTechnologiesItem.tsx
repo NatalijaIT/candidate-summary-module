@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography } from "@mui/material";
-import { cardStyles, cardContentStyles, titleStyles, yearsTextStyles } from "./MainTechnologiesItem.css";
+import { cardStyles, cardContentStyles, titleStyles } from "./MainTechnologiesItem.css";
 
 export type MainTechnologiesItemProps = {
 	title: string;
@@ -17,12 +17,11 @@ const MainTechnologiesItem = ({ title, years, byProfile }: MainTechnologiesItemP
 				<Typography variant="body2" sx={titleStyles}>
 					{title}
 				</Typography>
-				{!!years ? (
-					<Typography variant="body2" sx={yearsTextStyles}>
+				{years && (
+					<Typography sx={{ fontSize: 12 }}>
 						{years} Years
 					</Typography>
-				) : null
-				}
+				)}
 			</CardContent>
 		</Card>
 	);

@@ -16,10 +16,6 @@ export const cardContentStyles: SxProps<Theme> = (theme) => ({
     }
 });
 
-export const titleStyles: SxProps<Theme> = {
-    fontWeight: 500
-};
-
-export const yearsTextStyles: SxProps<Theme> = (theme) => ({
-    color: theme.palette.common.black
+export const titleStyles: SxProps<Theme> = (theme) => ({
+    fontWeight: theme.typography.body1.fontWeight
 });

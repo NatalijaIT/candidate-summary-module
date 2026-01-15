@@ -2,18 +2,18 @@ import StarIcon from "@mui/icons-material/Star";
 import { Tooltip } from "@mui/material";
 
 import {
-    RewardCard,
+    AchievementCard,
     CardContentWrapper,
-    RewardText,
+    AchievementText,
     StarIconWrapper
-} from "./AchievementItem.css";
+} from "./Achievement.css";
 
 type AchievementItemProps = {
     title: string;
     info: string;
 };
 
-const AchievementItem: React.FC<AchievementItemProps> = ({ title, info }) => {
+const AchievementItem = ({ title, info }: AchievementItemProps) => {
     return (
         <Tooltip
             title={info}
@@ -27,14 +27,14 @@ const AchievementItem: React.FC<AchievementItemProps> = ({ title, info }) => {
                 }
             }}
         >
-            <RewardCard variant="outlined">
+            <AchievementCard variant="outlined">
                 <CardContentWrapper>
                     <StarIconWrapper className="star-icon-wrapper">
                         <StarIcon />
                     </StarIconWrapper>
-                    <RewardText variant="body2">{title}</RewardText>
+                    <AchievementText variant="body2">{title}</AchievementText>
                 </CardContentWrapper>
-            </RewardCard>
+            </AchievementCard>
         </Tooltip>
     );
 };

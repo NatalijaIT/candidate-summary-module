@@ -1,22 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Box, Card, Typography } from "@mui/material";
 
-export const Container = styled(Box)(({ theme }) => ({
-    display: "flex",
-    flexDirection: "column",
-}));
-
-export const Title = styled(Typography)(({ theme }) => ({
-    fontWeight: 600,
-    marginBottom: theme.spacing(2),
-}));
-
-export const RewardsWrapper = styled(Box)(({ theme }) => ({
-    display: "flex",
-    gap: theme.spacing(2),
-}));
-
-export const RewardCard = styled(Card)(({ theme }) => ({
+export const AchievementCard = styled(Card)(({ theme }) => ({
     borderStyle: "dashed",
     borderColor: theme.palette.border.dashed,
     color: theme.palette.common.black,
@@ -25,8 +10,8 @@ export const RewardCard = styled(Card)(({ theme }) => ({
     cursor: 'pointer',
     transition: 'all 0.3s ease',
     '&:hover': {
-        '& .star-icon-wrapper': {
-            backgroundColor: theme.palette.highlight.main,
+        '& svg': {
+            fill: theme.palette.highlight.main,
         }
     }
 }));
@@ -38,8 +23,8 @@ export const CardContentWrapper = styled(Box)(({ theme }) => ({
     padding: `${theme.spacing(1)} ${theme.spacing(1.5)}`,
 }));
 
-export const RewardText = styled(Typography)(({ theme }) => ({
-    fontWeight: theme.typography.subtitle1.fontWeight,
+export const AchievementText = styled(Typography)(({ theme }) => ({
+    fontWeight: theme.typography.body1.fontWeight,
 }));
 
 export const StarIconWrapper = styled(Box)(({ theme }) => ({

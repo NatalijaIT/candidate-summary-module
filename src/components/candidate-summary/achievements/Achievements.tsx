@@ -1,13 +1,13 @@
 import AchievementItem from './AchievementItem';
 import { Box } from '@mui/material';
-import type { Achievement } from '../api/types';
-import { TechnologiesWrapper, MainTitle } from './MainTechnologies.css';
+import type { Achievement } from '../../../api/types';
+import { TechnologiesWrapper, MainTitle } from '../main-technologies/MainTechnologies.css';
 
 type ewardsAndAchievementsProps = {
     achievements?: Achievement[];
 };
 
-const RewardsAndAchievements = ({ achievements }: ewardsAndAchievementsProps) => {
+const Achievements = ({ achievements }: ewardsAndAchievementsProps) => {
     return (
         <Box>
             <MainTitle variant="h6" fontWeight={600} mb={2}>
@@ -26,4 +26,4 @@ const RewardsAndAchievements = ({ achievements }: ewardsAndAchievementsProps) =>
     );
 };
 
-export default RewardsAndAchievements;
+export default Achievements;

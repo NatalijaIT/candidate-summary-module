@@ -1,7 +1,7 @@
-import { StackItem } from './shared';
+import { StackItem } from '../../@shared';
 import { Box } from '@mui/material';
-import type { Skill } from '../api/types';
-import { TechnologiesWrapper, MainTitle } from './MainTechnologies.css';
+import type { Skill } from '../../../api/types';
+import { TechnologiesWrapper, MainTitle } from '../main-technologies/MainTechnologies.css';
 
 type AdditionalSkillsProps = {
     candidateSkills?: Skill[];
@@ -15,9 +15,9 @@ const AdditionalSkills = ({ candidateSkills }: AdditionalSkillsProps) => {
             </MainTitle>
             <TechnologiesWrapper>
                 {candidateSkills?.map((skill, index) => {
-                    return skill?.yearsOfExperience && (!skill?.main) &&
+                    return (skill?.yearsOfExperience && !skill?.main) &&
                         <StackItem
-                            key={`${skill} ${index}`}
+                            key={`${skill.title} ${index}`}
                             value={skill.title}
                         />
                 }

@@ -9,8 +9,8 @@ export const TechnologiesWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const MainTitle = styled(Typography)(({ theme }) => ({
-	fontWeight: theme.typography.h6.fontWeight,
+	lineHeight: theme.typography.h6.lineHeight,
 	fontSize: theme.typography.h6.fontSize,
-	letterSpacing: theme.typography.h6.letterSpacing,
-	marginBottom: theme.spacing(1.5)
+	marginBottom: theme.spacing(1.5),
+	color: theme.palette.common.black
 }));

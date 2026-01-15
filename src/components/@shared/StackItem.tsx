@@ -9,7 +9,7 @@ const StackItem = ({ value }: StackItemProps) => {
     return (
         <Card variant="outlined" sx={badgeCardStyles}>
             <CardContent sx={cardContentStyles}>
-                <Typography variant="body2" fontWeight={500}>
+                <Typography variant="body2" fontWeight={400}>
                     {value}
                 </Typography>
             </CardContent>
