@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# 🍋 Candidate Summary Module
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Dear Lemon.io, Welcome to this page! 
 
-Currently, two official plugins are available:
+## 🚀 How to Run the Project
+A couple of steps to run the project locally:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Install Dependencies:
+```bash
+npm install
+```
+### 2. Create a .env file and set the 'auth-key' which was provided. As an example, you can find .env.example. Also, set the target value (provided base URL) in vite.config.ts.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 3. Run the command:
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Brief architectural decisions:
+I used Vite to bootstrap the project as it's a good and quick out-of-the-box solution for starting projects, fully compatible with React and TypeScript.
+Also I used Vite to bootstrap the project as it's a good and quick out-of-the-box solution for starting projects, fully compatible with React and TypeScript.
+I suspect that any mature project uses a design system, so I slightly customized the MUI theme according to the provided designs—added custom colors and styles to reuse throughout the project.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌱 Some details I'd like to share:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This is just a tiny piece of the puzzle, but I had a blast geeking out on best practices and imagining it growing up to be part of something much bigger and cooler!
+
+---
+
+I know there are a lot of things that can be improved. For the future perspective, I would set prettier or add translation and my styles wish better look, but I'm open to improvements and new skills.
+
+Regards, Nataliia!

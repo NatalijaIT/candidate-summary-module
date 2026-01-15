@@ -1,5 +1,5 @@
-import { Card, CardContent, Typography } from '@mui/material';
-import { badgeCardStyles, cardContentStyles } from './StackItem.css';
+import { Typography } from "@mui/material";
+import { BadgeCard, BadgeCardContent } from "./StackItem.css";
 
 type StackItemProps = {
     value?: string;
@@ -7,13 +7,13 @@ type StackItemProps = {
 
 const StackItem = ({ value }: StackItemProps) => {
     return (
-        <Card variant="outlined" sx={badgeCardStyles}>
-            <CardContent sx={cardContentStyles}>
+        <BadgeCard variant="outlined">
+            <BadgeCardContent>
                 <Typography variant="body2" fontWeight={400}>
                     {value}
                 </Typography>
-            </CardContent>
-        </Card>
+            </BadgeCardContent>
+        </BadgeCard>
     );
 };
 

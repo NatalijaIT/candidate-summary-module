@@ -1,33 +1,34 @@
-import { Card, CardContent, Typography } from "@mui/material";
-import { cardStyles, cardContentStyles, titleStyles } from "./MainTechnologiesItem.css";
+import {
+    TechnologyCard,
+    TechnologyCardContent,
+    TechnologyTitle,
+    TechnologyYears
+} from "./MainTechnologiesItem.css";
 import TooltipWrapper from "../../@shared/TooltipWrapper";
 
 export type MainTechnologiesItemProps = {
-	title: string;
-	years?: string | number;
-	byProfile: boolean;
-}
-
-const MainTechnologiesItem = ({ title, years, byProfile }: MainTechnologiesItemProps) => {
-	return (
-		<TooltipWrapper byProfile={byProfile} title={title}>
-			<Card variant="outlined" sx={(theme) => ({
-				...((typeof cardStyles === 'function' ? cardStyles(theme) : cardStyles) as object),
-				backgroundColor: byProfile ? theme.palette.action.selected : 'transparent'
-			})}>
-				<CardContent sx={cardContentStyles}>
-					<Typography variant="body2" sx={titleStyles}>
-						{title}
-					</Typography>
-					{years && (
-						<Typography sx={{ fontSize: 12 }}>
-							{years} Years
-						</Typography>
-					)}
-				</CardContent>
-			</Card>
-		</TooltipWrapper>
-	);
+    title: string;
+    years?: string | number;
+    byProfile: boolean;
 };
 
-export default MainTechnologiesItem
+const MainTechnologiesItem = ({ title, years, byProfile }: MainTechnologiesItemProps) => {
+    return (
+        <TooltipWrapper byProfile={byProfile} title={title}>
+            <TechnologyCard variant="outlined" byProfile={byProfile}>
+                <TechnologyCardContent>
+                    <TechnologyTitle variant="body2">
+                        {title}
+                    </TechnologyTitle>
+                    {years && (
+                        <TechnologyYears>
+                            {years} Years
+                        </TechnologyYears>
+                    )}
+                </TechnologyCardContent>
+            </TechnologyCard>
+        </TooltipWrapper>
+    );
+};
+
+export default MainTechnologiesItem;
