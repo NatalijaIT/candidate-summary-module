@@ -1,19 +1,21 @@
-import StatusIndicatorItem from './AvailabilityItem';
-import { AvailabilityContainer } from './Availability.css';
+import { Stack } from '@mui/material';
+import { AvailabilityContainer } from './index.css';
+import { SkillItem } from '../@shared';
+import { SectionTitle } from '../@shared/SectionWrapper.css';
 
-type AvailabilityProps = {
+type AvailabilitySectionProps = {
     availability?: string;
     availaibityHours?: string;
     isDirectHirePossible?: boolean;
     readyToStart?: string;
 };
 
-const Availability = ({
+const AvailabilitySection = ({
     availability,
     availaibityHours,
     isDirectHirePossible,
     readyToStart
-}: AvailabilityProps) => {
+}: AvailabilitySectionProps) => {
     const availabilityData = [
         { title: 'Availability', value: availability },
         { title: 'Ready to start', value: readyToStart },
@@ -24,14 +26,15 @@ const Availability = ({
     return (
         <AvailabilityContainer>
             {availabilityData?.map((info) => (
-                <StatusIndicatorItem
-                    key={info.title}
-                    title={info.title}
-                    value={info.value}
-                />
+                <Stack spacing={2} key={info.title}>
+                    <SectionTitle variant="h6" fontWeight={600}>
+                        {info.title}
+                    </SectionTitle>
+                    {info.value && <SkillItem value={info.value} relevant={false} />}
+                </Stack>
             ))}
         </AvailabilityContainer>
     );
 };
 
-export default Availability;
+export default AvailabilitySection;

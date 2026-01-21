@@ -66,7 +66,7 @@ export const InfoWrapper = styled(Stack)(({ theme }) => ({
     color: theme.palette.info.main,
 }));
 
-export const HeaderRow = styled(Stack)(({ theme }) => ({
+export const Header = styled(Stack)(({ theme }) => ({
     alignItems: "center",
     justifyContent: "space-between",
     height: 40,
@@ -85,4 +85,15 @@ export const SummaryText = styled(Typography)(({ theme }) => ({
     lineHeight: theme.typography.body1.lineHeight,
     fontSize: theme.typography.body1.fontSize,
     marginBottom: theme.spacing(4)
+}));
+
+export const AvailabilityContainer = styled(Box)(({ theme }) => ({
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: theme.spacing(4),
+
+    '@media (max-width: 630px)': {
+        gridTemplateColumns: "1fr",
+        gap: theme.spacing(3),
+    },
 }));

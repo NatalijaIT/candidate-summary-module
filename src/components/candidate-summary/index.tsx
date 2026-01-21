@@ -1,20 +1,23 @@
 import { useCandidateSummary, useCandidateProfile } from '../../hooks/useCandidateData';
-import MainTechnologies from './main-technologies/MainTechnologies';
+
+import MainTechnologiesSection from './MainTechnologiesSection';
+import AdditionalSkillsSection from './AdditionalSkillsSection';
+import AchievementsSection from './AchievementsSection';
+import AvailabilitySection from './AvailabilitySection';
+import Loader from '../@shared/Loader';
+
 import {
     ContentWrapper,
     SummaryText,
-    HeaderRow,
+    Header,
     InfoIcon,
     InfoText,
     InfoWrapper,
     TitleHighlight,
     TitleText,
     TitleWrapper
-} from "./CandidateSummary.css";
-import AdditionalSkills from './additional-skills/AdditionalSkills';
-import Achievements from './achievements/Achievements';
-import Availability from './availability/Availability';
-import Loader from '../@shared/Loader';
+} from "./index.css";
+
 import { mergeSkillsWithProfile, sortSkillsByRelevance } from '../../utils/skillUtils';
 
 const CandidateSummaryModule = () => {
@@ -39,7 +42,7 @@ const CandidateSummaryModule = () => {
 
     return (
         <ContentWrapper>
-            <HeaderRow direction="row" spacing={2}>
+            <Header direction="row" spacing={2}>
                 <TitleWrapper>
                     <TitleHighlight />
                     <TitleText variant="h1">
@@ -53,14 +56,16 @@ const CandidateSummaryModule = () => {
                         Relevant skills are highlighted
                     </InfoText>
                 </InfoWrapper>
-            </HeaderRow>
+            </Header>
+
             <SummaryText>
                 {summary}
             </SummaryText>
-            <MainTechnologies candidateSkills={sortedSkills} />
-            <AdditionalSkills candidateSkills={sortedSkills} />
-            <Achievements achievements={summaryAchievements} />
-            <Availability
+
+            <MainTechnologiesSection candidateSkills={sortedSkills} />
+            <AdditionalSkillsSection candidateSkills={sortedSkills} />
+            <AchievementsSection achievements={summaryAchievements} />
+            <AvailabilitySection
                 availability={summaryAvailability}
                 availaibityHours={availaibityHours}
                 isDirectHirePossible={isDirectHirePossible}

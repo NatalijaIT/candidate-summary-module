@@ -1,8 +1,8 @@
-import CandidateSummary from './components/candidate-summary/CandidateSummary.tsx';
+import CandidateSummary from './components/candidate-summary/index.tsx';
 
 function App() {
   return (
-      <CandidateSummary />
+    <CandidateSummary />
   )
 }
 
